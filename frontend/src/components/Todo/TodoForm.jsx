@@ -29,9 +29,9 @@ export default function TodoForm() {
     return (
         <>
             <form onSubmit={handleFormSubmit}>
-                <input type="text" name="title" value={task.title} onChange={handleInputChange} placeholder="Task Title" />
-                <input type="text" name="description" value={task.description} onChange={handleInputChange} placeholder="Description" />
-                <button>Submit</button>
+                <input type="text" name="title" className="border border-gray-200 p-3" value={task.title} onChange={handleInputChange} placeholder="Task Title" />
+                <input type="text" name="description" className="border border-gray-200 p-3" value={task.description} onChange={handleInputChange} placeholder="Description" />
+                <button className="bg-green-700 p-3 px-5 text-white rounded-xl cursor-pointer ml-2">Submit</button>
             </form>
 
             <TodoList taskList={taskList} />

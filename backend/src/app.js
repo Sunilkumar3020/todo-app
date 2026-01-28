@@ -2,6 +2,7 @@ import express, { urlencoded } from "express";
 import cors from "cors";
 import userRouter from "./routes/user.route.js";
 import todoRouter from './routes/todo.route.js'
+import authMiddleware from "./middleware/auth.middleware.js"
 const app = express()
 
 app.use(cors())
@@ -14,6 +15,6 @@ app.get('/', (req, res) => {
 
 
 app.use("/api/v1/users", userRouter)
-app.use('/api/v1/todos', todoRouter)
+app.use('/api/v1/todos', authMiddleware, todoRouter)
 
 export default app;
